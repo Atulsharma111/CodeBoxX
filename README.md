@@ -18,6 +18,16 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+## Using Turbopack (built into Next.js)
+
+This project uses Next.js’ built-in Turbopack support. The provided npm scripts already enable Turbopack via `--turbo`.
+
+```bash
+npm run dev
+npm run build
+```
+
+
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More
