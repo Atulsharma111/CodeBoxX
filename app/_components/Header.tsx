@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,7 +11,10 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import { useUser , UserButton } from "@clerk/nextjs";
 function Header() {
+
+  const {user} = useUser();
   return (
     <div className="p-4 mmax-w-7xl flex justify-between items-center w-full">
       <div className="flex items-center gap-2 p-4">
@@ -44,9 +48,18 @@ function Header() {
         </NavigationMenuList>
       </NavigationMenu>
       {/* SignUp button */}
-      <Button className="font-game text-2xl" variant="pixel">
-        Signup
-      </Button>
+      {!user? 
+
+        <Link href ={'/sing-in'}>
+        <Button className="font-game text-2xl" variant="pixel">Signup</Button>
+        </Link>
+
+        :<div className = 'flex gap-4 items-center '>
+        <Button className="font-game text-2xl" variant="pixel">Dashboard</Button>
+        <UserButton/>
+
+        </div>}
+      
     </div>
   );
 }

@@ -1,10 +1,12 @@
 import React from 'react'
 import Image from 'next/image'
 import { Button } from "@/components/ui/button";
+import Link from 'next/link';
+
 function Hero() {
   return (
     <div className='relative w-full h-screen overflow-hidden'>
-      <Image src ={'/hero3.jfif'} alt="Hero" width={1000} height={1000}
+      <Image src ={'/hero.gif'} alt="Hero" width={1000} height={1000}
       className='w-full h-full object-cover absolute inset-0'
       />
 
@@ -18,7 +20,9 @@ function Hero() {
         >Coding Adventure</h2>
         <h2 className='mt-5 font-game text-3xl'>Beginner friendly coding courses and projects</h2>
 
+        <Link href={'/sign-in'}>
         <Button className='font-game text-3xl p-5 mt-7' variant='pixel'>GET STARTED</Button>
+        </Link>
       </div>
     </div>
   )
